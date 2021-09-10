@@ -1,0 +1,148 @@
+/* Mobile and tablet */
+@media (max-width: 1023px){
+    .app-content{
+        padding-top: 8px;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    :root{
+        --navbar-height: 0px;
+        --header-height: 68px;
+    }
+    .header__cart{
+        text-align:right;
+        width: 90px;
+    }
+    .header__cart-list-item{
+        max-height: 26vh;
+    }
+    .header__cart-list{
+        top: calc(50% + var(--header-height) / 2 );
+        width: var(--header-with-search-width);
+    }
+    .header__cart-list:after{
+        display: none;
+    }
+    .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+    .app__container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar));
+    } 
+    .header-sort-bar{
+        display: flex;
+    }
+    .header__search-input:focus ~ .header__search-history{
+       
+        z-index: 4;
+    }
+    li a{
+        -webkit-tap-highlight-color: transparent;
+    }
+    .category-mobile-product{
+       display: block;
+    }
+}
+/* Tablet */
+@media (min-width:740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .btn--with-icon , .btn--with-icon.btn--size-s{
+        min-width: 130px;
+        margin-left: 10px;
+        height: 40px;
+    }
+    .auth-form__socials-title{
+        margin: 0 20px;
+        line-height: 15px;
+    }
+
+}
+/* Mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .show-on-mobile{
+        display: flex;
+    }
+    .header-with-search{
+       justify-content: space-between;
+       flex: 1;
+      
+    }
+    
+    .header__cart, .header__logo{
+        width: unset;
+    }
+    
+    .search-input-checkbox:checked ~ .header__search{
+        display: flex;
+    }
+    .search-input-checkbox:checked ~ .search-overlay{
+        display: flex;
+    }
+    .menu-checkbox:checked ~ .menu-overlay {
+        display: flex;
+    }
+    .menu-checkbox:checked ~ .menu-list{
+        display: block;
+    }
+    .search-input-checkbox:not(:checked) ~ .header__search, .search-overlay{
+        display: none;
+    }
+    .header__search {
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        width: 100%;
+        z-index: 3;
+        padding-right: 10px;
+        animation: growDown linear 0.5s;
+    }
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-soft-bar));
+        box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        
+    }
+
+    @keyframes growDown {
+        0%{
+            top: calc(var(--header-height)/1.5)
+        }
+        100%{
+            top: var(--header-height);
+        }
+        
+    }
+    .pagination-item__link{
+        min-width: 26px;
+        font-size: 1.4rem;
+    }
+    .pagination-item {
+        margin: 0 8px;
+    }
+    .pagination-item{
+        margin: 0 2px;
+    }
+    .app-content {
+        margin: 0;
+    }
+    .mobile-padding{
+        padding: 0 16px;
+    }
+    .footer__list-item-link, .footer__download {
+        justify-content: center;
+    }
+     .footer__heading {
+         text-align:center;
+     }
+}
